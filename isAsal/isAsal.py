@@ -1,11 +1,15 @@
-isAsal = int(input("1'den büyük bir tam sayı giriniz: "))
-
-if isAsal <= 1:
-    print("Geçersiz sayı!")
+isAsal = input("1'den büyük bir tam sayı giriniz: ")
+try:
+    isAsal = int(isAsal)
+except:
+    print("Lütfen bir sayı giriniz.")
 else:
-    for x in range(2,isAsal):
-        if isAsal % x == 0:
-            print(isAsal,"asal değildir.")
-            break
+    if int(isAsal) <= 1:
+        print("Geçersiz sayı!")
     else:
-        print(isAsal,"asaldır.")
+        for x in range(2,int(isAsal)):
+            if int(isAsal) % x == 0:
+                print(int(isAsal),"asal değildir.")
+                break
+        else:
+            print(int(isAsal),"asaldır.")
